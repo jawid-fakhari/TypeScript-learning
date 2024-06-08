@@ -1,4 +1,5 @@
 import React from 'react';
+import User from './components/User';
 
 //possiamo creare un variabile type fuori scope e usarlo all'interno dello scop line 29
 type Person = { name: string, fName: string, age: number };
@@ -38,6 +39,8 @@ function App() {
     <div className="App">
         <h1>TypeScript</h1>
         <h2>{sum(2, 4)}</h2>
+        {/* i props di User è stato settato, e finché non viene completato i suoi props avermo errore "il bello di typescript" */}
+        <User name='Ali' age={23} hasChild={false}/>
     </div>
   );
 }
