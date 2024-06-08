@@ -45,9 +45,9 @@ function App() {
         <h1>TypeScript</h1>
         <h2>{sum(2, 4)}</h2>
         {/* i props di User è stato settato, e finché non viene completato i suoi props avermo errore "il bello di typescript" */}
-        <User name='Ali' age={23} hasChild={false} minus={minus} father='Bob' mother={2}/>
+        <User name='Ali' age={23} hasChild={false} minus={minus} father='Bob' brother={2} mother='Jenny'/>
         <hr />
-        <User name='Mammad' age={35} hasChild={true} minus={minus} mother="jasmine"/>
+        <User name='Mammad' age={35} hasChild={true} minus={minus} brother="jasmine" mother='Rosie'/>
         
     </div>
   );

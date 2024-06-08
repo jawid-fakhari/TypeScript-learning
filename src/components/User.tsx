@@ -1,6 +1,6 @@
 import React from 'react'
 
-
+type MotherType = "Jenny" | "Rosie" | "Silvy";
 // pulizia del codice
 type USER={
     name: string,
@@ -10,11 +10,13 @@ type USER={
     //Come settare un Optional Type
     father?: string,
     //Come settare un Any Type
-    mother: any,
+    brother: any,
+    // Settare Union Type
+    mother: MotherType
 }
 
 //come settare il type dei props in react component, che è stato importato in App.tsx
-export default function User({name, age, hasChild, minus, father, mother}: USER,) {
+export default function User({name, age, hasChild, minus, father, brother, mother}: USER,) {
   return (
     <div>
         <h3>Name: {name}</h3>
@@ -24,6 +26,7 @@ export default function User({name, age, hasChild, minus, father, mother}: USER,
         <h3>
             Father: {father ?? "-"}
         </h3>
+        <h3>Brother: {brother}</h3>
         <h3>Mother: {mother}</h3>
     </div>
   )
