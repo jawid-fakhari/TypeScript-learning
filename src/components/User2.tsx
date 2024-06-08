@@ -9,11 +9,11 @@ type USER={
     minus: (a:number, b:number) => number // ricevere function come props da App.tsx
 }
 
-//come settare il type dei props in react component, che è stato importato in App.tsx
-export default function User({name, age, hasChild, minus}: USER) {
+//un altro modo per esportare un componente con React.FC
+export const User:React.FC<USER> = ({name, age, hasChild, minus}) => {
   return (
     <div>
-        <h3>Name: {name}</h3>
+        <h3>Nome: {name}</h3>
         <h3>Age: {age}</h3>
         <h3>Has child: {`${hasChild}`}</h3>
         <h3>Minus: {minus(10, 3)}</h3>
