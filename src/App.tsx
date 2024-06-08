@@ -1,9 +1,9 @@
 import React from 'react';
 import User from './components/User';
 
-//possiamo creare un variabile type fuori scope e usarlo all'interno dello scop line 29
+//possiamo creare un variabile type fuori scope e usarlo all'interno dello scop line 30
 type Person = { name: string, fName: string, age: number };
-//line 35
+//line 36
 type MixArray = (string | number)[];
 //come settare il type dei parametri di un function , dentro h2
 function sum(a: number, b:number) : number{ // ...) : number è il type dell'output di function
@@ -35,12 +35,17 @@ function App() {
 
   let array4 : MixArray = ['ff', 3];
 
+  // come passare una function con i type settato come props al componente
+  function minus(a:number, b:number) {
+    return a - b;
+  }
+
   return (
     <div className="App">
         <h1>TypeScript</h1>
         <h2>{sum(2, 4)}</h2>
         {/* i props di User è stato settato, e finché non viene completato i suoi props avermo errore "il bello di typescript" */}
-        <User name='Ali' age={23} hasChild={false}/>
+        <User name='Ali' age={23} hasChild={false} minus={minus}/>
     </div>
   );
 }
