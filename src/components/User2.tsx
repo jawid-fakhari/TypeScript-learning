@@ -1,3 +1,4 @@
+//questo è una nuova forma per esportare un componente. attualmente non viene usato nel codice 
 import React from 'react'
 
 
