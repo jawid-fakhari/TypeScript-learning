@@ -1,5 +1,6 @@
 import React from 'react';
 import User from './components/User';
+import Children from './components/Children';
 
 //possiamo creare un variabile type fuori scope e usarlo all'interno dello scop line 30
 type Person = { name: string, fName: string, age: number };
@@ -48,7 +49,9 @@ function App() {
         <User name='Ali' age={23} hasChild={false} minus={minus} father='Bob' brother={2} mother='Jenny'/>
         <hr />
         <User name='Mammad' age={35} hasChild={true} minus={minus} brother="jasmine" mother='Rosie'/>
-        
+        <Children>
+            <h1>This is a children</h1>
+        </Children>       
     </div>
   );
 }
