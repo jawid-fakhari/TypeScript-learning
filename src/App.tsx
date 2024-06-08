@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import User from './components/User';
 import Children from './components/Children';
 
@@ -11,7 +11,15 @@ function sum(a: number, b:number) : number{ // ...) : number è il type dell'out
   return a + b;
 }
 
+// state type
+type State = {
+  name: string,
+  age: number,
+}
+
 function App() {
+  // settare il Type di un usestate
+  const [state, setState] = useState<State | null>(null)
 
   // how to set type of variables in typescript
   let name: string = 'Mario';
@@ -51,7 +59,11 @@ function App() {
         <User name='Mammad' age={35} hasChild={true} minus={minus} brother="jasmine" mother='Rosie'/>
         <Children>
             <h1>This is a children</h1>
-        </Children>       
+        </Children>
+        {
+          // per evitare a crasshare l'applicazione quando abbiamo data null usiamo ? dopo state
+          state?.name
+        }   
     </div>
   );
 }
