@@ -1,24 +1,26 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+
 
 function App() {
+
+  // how to set type of variables in typescript
+  let name: string = 'Mario';
+  let age: number = 30;
+  let isMarried: boolean = true;
+
+  let array: number[] = [1, 2, 3];
+  let array2: string[] = ['hello', 'ciao', 'hola'];
+  let array3: (number | string)[] = [1, 'ciao', 3, 'string'];
+
+  // creare un object con type dichiarato, attenzione che non puoi aggiungere una nuova voce dentro object se non lo hai gia dichiarato dentro type
+  let object: {name: string, age: number} = {
+    name: 'jawid',
+    age: 36,
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <h1>TypeScript</h1>
     </div>
   );
 }
