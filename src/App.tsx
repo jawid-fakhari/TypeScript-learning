@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import User from './components/User';
 import Children from './components/Children';
+import User3 from './components/User3';
 
 //possiamo creare un variabile type fuori scope e usarlo all'interno dello scop line 30
 type Person = { name: string, fName: string, age: number };
@@ -20,6 +21,8 @@ type State = {
 function App() {
   // settare il Type di un usestate
   const [state, setState] = useState<State | null>(null)
+  // useState props,  il type ad un state <string> oppure è valore iniziale di un state qui 'Pippo' 
+  const [newState, setNewState] = useState<string>('Pippo');
 
   // how to set type of variables in typescript
   let name: string = 'Mario';
@@ -63,9 +66,12 @@ function App() {
         {
           // per evitare a crasshare l'applicazione quando abbiamo data null usiamo ? dopo state
           state?.name
-        }   
+        }
+        <User3 value={newState} onChange={setNewState}/>
     </div>
   );
 }
 
 export default App;
+
+//14
