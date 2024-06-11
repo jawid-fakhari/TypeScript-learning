@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import User from './components/User';
 import Children from './components/Children';
 import User3 from './components/User3';
+import Button from './components/Button';
 
 //possiamo creare un variabile type fuori scope e usarlo all'interno dello scop line 30
 type Person = { name: string, fName: string, age: number };
@@ -68,6 +69,8 @@ function App() {
           state?.name
         }
         <User3 value={newState} onChange={setNewState}/>
+        {/* component props */}
+        <Button /> {/*  //qui {type, tutti type ci sono} puoi trovare tutti type dei props. */}
     </div>
   );
 }
