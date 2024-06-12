@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import User from './components/User';
 import Children from './components/Children';
 import User3 from './components/User3';
@@ -48,20 +48,23 @@ function App() {
 
   let array4 : MixArray = ['ff', 3];
 
-  //event type setting, react ci da il type del nostro event. button
-  const handleClick = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-
-  }
-  //event type setting, react ci da il type del nostro event. input
-  const handleChange= (e: React.ChangeEvent<HTMLInputElement>) => {
-
-  }
-
   // come passare una function con i type settato come props al componente
   function minus(a:number, b:number) {
     return a - b;
   }
 
+
+  //event type setting, react ci da il type del nostro event. button
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {  }
+  //event type setting, react ci da il type del nostro event. input
+  const handleChange= (e: React.ChangeEvent<HTMLInputElement>) => {  }
+
+  //come dare type ai useRef => in pratica vediamo che tipo tag è per esempio qui sotto è un tag di button qindi scriviamo HTMLButtonElement
+  const buttonRef = useRef<HTMLButtonElement>(null);
+  //come dare type ai useRef => in pratica vediamo che tipo tag è per esempio qui sotto è un tag di input qindi scriviamo HTMLInputElement
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  
   return (
     <div className="App">
         <h1>TypeScript</h1>
@@ -85,6 +88,9 @@ function App() {
         <button onClick={handleClick}>click</button>
         {/* event type setting onChange input */}
         <input type='text' onChange={handleChange}></input>
+        {/* come dare type ai userRef esempio button */}
+        <button ref={buttonRef}>click Ref</button>
+        <input type="text" ref={inputRef}/>
     </div>
   );
 }
