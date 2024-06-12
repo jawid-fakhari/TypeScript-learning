@@ -48,6 +48,15 @@ function App() {
 
   let array4 : MixArray = ['ff', 3];
 
+  //event type setting, react ci da il type del nostro event. button
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+
+  }
+  //event type setting, react ci da il type del nostro event. input
+  const handleChange= (e: React.ChangeEvent<HTMLInputElement>) => {
+
+  }
+
   // come passare una function con i type settato come props al componente
   function minus(a:number, b:number) {
     return a - b;
@@ -71,10 +80,13 @@ function App() {
         <User3 value={newState} onChange={setNewState}/>
         {/* component props */}
         <Button /> {/*  //qui {type, tutti type ci sono} puoi trovare tutti type dei props. */}
+
+        {/* event type setting onClick button */}
+        <button onClick={handleClick}>click</button>
+        {/* event type setting onChange input */}
+        <input type='text' onChange={handleChange}></input>
     </div>
   );
 }
 
 export default App;
-
-//14
