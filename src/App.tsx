@@ -19,6 +19,7 @@ type State = {
   age: number,
 }
 
+// ho un problema 
 function App() {
   // settare il Type di un usestate
   const [state, setState] = useState<State | null>(null)
